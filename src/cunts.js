@@ -1,4 +1,3 @@
-const cunts = ["Boris Johnson", "Boorus Joonson"];
-export const quotes = ["I hate women", "Letterbox muslims"];
+const cunts = ["Boris Johnson", "Boorus Joonson", "Prime Minister of the UK", "Bellend Jizzman", "Bogbrush Jizzbag"];
 
 export default cunts;

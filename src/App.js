@@ -14,7 +14,9 @@ import { toast } from "react-toastify";
 import { FlagGrid } from './components/FlagGrid';
 import { Guesses } from './components/Guesses';
 import GoogleAds from './components/GoogleAd';
-import { quotes } from './cunts';
+import Button from '@mui/material/Button';
+import angleIcon from './angle_favicon.svg';
+import flagleIcon from './flagle_favicon.svg';
 
 const CentreWrapper = styled.div`
   margin: 0;
@@ -46,7 +48,7 @@ const Attempts = styled(({ score, attempts, max, ...props }) => (
   }
   @media (prefers-color-scheme: dark) {
     color: #fff;
-}
+  }
 `;
 
 const Footer = styled.div`
@@ -64,7 +66,7 @@ const Footer = styled.div`
   @media (prefers-color-scheme: dark) {
     color: #fff;
     a {
-      color: #fff
+      color: #fff;
     }
   }
 `;
@@ -72,9 +74,22 @@ const Footer = styled.div`
 const AdContainer = styled.div`
   width: 100%;
   margin-top: auto;
+  margin-bottom: 10px;
   bottom: 0px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+
+  @media (prefers-color-scheme: dark) {
+    color: #fff;
+  }
+`;
+
+const GamesContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 5px;
 `;
 
 const TitleBarDiv = styled.div`
@@ -96,14 +111,25 @@ const TitleBar = styled.div`
 const Title = styled.div`
   display: block;
   font-size: 4rem;
-  color: white;
+  color: black;
   span {
     color: #1a76d2;
   }
 
   @media (prefers-color-scheme: dark) {
-    color: #fff;
+    color: white;
   }
+`;
+
+const AngleButton = styled(Button)`
+  span {
+    font-weight: bold;
+  }
+`;
+
+const Icon = styled.img`
+  width: 20px;
+  margin-right: 10px;
 `;
 
 const shuffle = arr => [...arr].sort(() => 0.5 - Math.random());
@@ -177,9 +203,7 @@ function App(props) {
 
   const onGuess = guess => {
     const tileNum = revealRandomTile();
-    const quote = quotes[Math.floor(Math.random()*quotes.length)];
     addGuess({name: guess,
-              quote: quote,
               tile: tileNum,
               correct: guess === trueCunt
             });
@@ -225,7 +249,11 @@ function App(props) {
           guesses={guesses}
         />
         <AdContainer>
-          <GoogleAds slot="6074082390"></GoogleAds>
+          <div>Games you may actually enjoy:</div>
+          <GamesContainer>
+            <AngleButton variant="outlined" onClick={() => {window.open("https://flagle.io")}}><Icon src={flagleIcon}/><div><span>Flagle</span></div></AngleButton>
+            <AngleButton variant="outlined" onClick={() => {window.open("https://angle.wtf")}}><Icon src={angleIcon}/><div><span>Angle</span></div></AngleButton>
+          </GamesContainer>
         </AdContainer>
       </CentreWrapper>
     </div>

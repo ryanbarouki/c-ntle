@@ -183,9 +183,6 @@ export function StatsModal({ end, score, guesses, maxAttempts, dayString, countr
           <Type id="modal-modal-description" sx={{ mt: 2 }}>
             <Button variant="contained" onClick={() => {window.open("https://crisisrelief.un.org/t/ukraine")}}>🇺🇦 Donate to Ukraine ❤️</Button>
           </Type>
-          <Type id="modal-modal-description" sx={{ mt: 2 }}>
-            <AngleButton variant="outlined" onClick={() => {window.open("https://angle.wtf")}}><Icon src={angleIcon}/><div>Check out <span>Angle</span></div></AngleButton>
-          </Type>
         </StyledBox>
       </StyledModal>
     </div>

@@ -28,7 +28,7 @@ const CuntGuess = styled.div`
   grid-column: 1 / span 4;
 `;
 
-const Quote = styled.div`
+const Link = styled.div`
   ${AnswerLine}
   grid-column: 5 / span 4;
 `;
@@ -39,7 +39,7 @@ export function Guesses({ guesses }) {
       (
         <GuessLine key={index}>
           <CuntGuess>{guess.name}</CuntGuess>
-          <Quote>{guess.quote} </Quote>
+          <Link><a href="https://twitter.com/ByDonkeys/status/1533765420427186179?s=20&t=5YLxQZea0R3VHo6ZhG8new">The true Boris Johnson</a></Link>
         </GuessLine>
       ))
   );

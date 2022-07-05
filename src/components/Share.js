@@ -29,7 +29,7 @@ export function Share({ score, guesses, attempts, end, dayString}) {
     const currentDate = DateTime.fromFormat(trueDayString, "yyyy-MM-dd");
     const diffInDays = currentDate.diff(FIRST_DAY_OF_FLAGLE, 'days').toObject().days;
     const squareString = generateShareSquares(score, guesses, attempts);
-    return `#cntle #${diffInDays} ${score === "DNF" ? "X" : guesses.length}/${attempts}\n${squareString}https://www.flagle.io\
+    return `#cntle #${diffInDays} ${score === "DNF" ? "X" : guesses.length}/${attempts}\n${squareString}https://www.c-ntle.com\
             \n#itshappening`
   }, [guesses, attempts, dayString, score]);
 
