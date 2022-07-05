@@ -28,6 +28,7 @@ const AnswerBox = ({ answer, onCorrect, onIncorrect, disabled, cunts, onGuess, .
       onChange={handleSubmit}
       placeholder="Guess the c*nt!"
       isOptionDisabled={() => disabled}
+      isSearchable={false}
     />
   );
 };
